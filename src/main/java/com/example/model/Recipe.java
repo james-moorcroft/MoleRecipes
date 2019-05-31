@@ -1,6 +1,7 @@
 package com.example.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 	public class Recipe implements Serializable {
 	  
@@ -12,6 +13,7 @@ import java.io.Serializable;
 	    private long id;
 	    private String name;
 	    private String method;
+	    private List<Ingredient> ingredients;
 
 		public long getId() {
 			return id;
@@ -37,6 +39,14 @@ import java.io.Serializable;
 			this.method = method;
 		}
 	    
+		public List<Ingredient> getIngredients() {
+			return ingredients;
+		}
+
+		public void setIngredients(List<Ingredient> ingredients) {
+			this.ingredients = ingredients;
+		}
+
 	    
 	    
 	}

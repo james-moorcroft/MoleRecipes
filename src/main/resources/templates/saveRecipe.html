@@ -3,6 +3,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>New Recipe page</title>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 </head>
 <body>
 <h1>Add a recipe</h1>
@@ -16,6 +18,9 @@
         <tr>
             <td><label th:text="method" /></td>
             <td><input type="text" th:field="*{method}" /></td>
+        </tr>
+        <tr th:each="ingredient : ${ingredients}">
+            <td><span th:text="${ingredient.name}"> Ingredient </span></td>
         </tr>
         <tr>
             <td><input type="submit" value="Do It !!!" /></td>
