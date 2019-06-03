@@ -17,10 +17,11 @@
         </tr>
         <tr>
             <td><label th:text="method" /></td>
-            <td><input type="text" th:field="*{method}" /></td>
+            <td><textarea rows=2 th:field="*{method}" /></td>
         </tr>
-        <tr th:each="ingredient : ${ingredients}">
-            <td><span th:text="${ingredient.name}"> Ingredient </span></td>
+        <tr th:each="ingredient, itemStat : *{ingredients}">
+			<td><label th:text="ingredients" /></td>
+        	<td><input th:field="*{ingredients[__${itemStat.index}__].name}" /><td>
         </tr>
         <tr>
             <td><input type="submit" value="Do It !!!" /></td>

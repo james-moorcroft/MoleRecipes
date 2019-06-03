@@ -2,6 +2,7 @@ package com.example.model;
 
 public class Ingredient {
 	
+
 	private String id;
 	private String name;
 	
@@ -18,5 +19,9 @@ public class Ingredient {
 		this.name = name;
 	}
 	
+	@Override
+	public String toString() {
+		return name;
+	}
 
 }

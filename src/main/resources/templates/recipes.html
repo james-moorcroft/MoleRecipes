@@ -9,7 +9,7 @@
 <body>
 <h1>Recipes</h1>
 <p>Below is a list of Mole Recipes</span></p>
-<table>
+<table border=1>
 	<thead>
 		<tr>
 			<th id="recipeId">ID</th>
@@ -23,7 +23,7 @@
 	        <td th:text="${recipe.id}" />
 	        <td th:text="${recipe.name}" />
 	        <td th:text="${recipe.method}" />
-	        <td th:text="${recipe.ingredients}" />
+	        <td th:text="${recipe.ingredients}" />	        
 	    </tr>
 	</tbody>
 </table>

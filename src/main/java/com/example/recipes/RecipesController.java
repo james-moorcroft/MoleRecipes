@@ -1,5 +1,6 @@
 package com.example.recipes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 
+import com.example.model.Ingredient;
 import com.example.model.Recipe;
 
 
@@ -48,7 +50,15 @@ public class RecipesController {
     
     @GetMapping("/saveRecipe")
     public String saveRecipeGet(Model model) {
-    	model.addAttribute("recipe", new Recipe());
+    	
+    	Recipe recipe = new Recipe();
+    	List<Ingredient> ingredients = new ArrayList<Ingredient>();
+    	ingredients.add(new Ingredient());
+    	ingredients.add(new Ingredient());
+    	ingredients.add(new Ingredient());   	
+    	recipe.setIngredients(ingredients);
+    	
+    	model.addAttribute("recipe", recipe);
     	return "saveRecipe";
     }
     
